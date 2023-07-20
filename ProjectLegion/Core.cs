@@ -4,24 +4,25 @@ namespace ProjectLegion;
 public class Core
 {
     private readonly Config _config;
+    private readonly IKernel _kernel;
+
     public Core(Config config)
     {
         _config = config;
-    }
-
-    public async Task<string> Test()
-    {
-        var kernel = new KernelBuilder()
+        _kernel = new KernelBuilder()
             .WithOpenAITextCompletionService(
                 _config.OpenAIModel,
                 _config.OpenAIApiKey)
             .Build();
+    }
 
+    public async Task<string> Test()
+    {
         var prompt = @"{{$input}}
 
 One line TLDR with the fewest words.";
 
-        var summarize = kernel.CreateSemanticFunction(prompt);
+        var summarize = _kernel.CreateSemanticFunction(prompt);
 
         string text1 = @"
 1st Law of Thermodynamics - Energy cannot be created or destroyed.
