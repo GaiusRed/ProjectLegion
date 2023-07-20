@@ -15,7 +15,7 @@ public class CoreTests
         string TestOutput;
 
         // Act
-        TestOutput = await Fixtures.CoreFixture.CoreDefault.Test();
+        TestOutput = await Fixtures.CoreFixture.CoreDefault.TestOpenAIConnection();
         Log.WriteLine(TestOutput);
 
         // Assert
