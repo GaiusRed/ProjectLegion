@@ -15,7 +15,7 @@ public class CoreTests
         string TestOutput;
 
         // Act
-        TestOutput = await Fixtures.CoreFixture.Instance.Default.Test();
+        TestOutput = await Fixtures.CoreFixture.CoreDefault.Test();
         Log.WriteLine(TestOutput);
 
         // Assert
