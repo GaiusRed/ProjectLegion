@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CodeHollow.FeedReader" Version="1.2.6" />
     <PackageReference Include="Microsoft.SemanticKernel" Version="0.17.230711.7-preview" />
   </ItemGroup>
 
